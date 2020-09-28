@@ -10,6 +10,29 @@
     <title>{% block title %}CRUD App{% endblock title %}</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="{% url 'article_list_path' %}">Articles</a>
+        {% if user.is_authenticated %}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="{% url 'article_new-article_path' %}">New article</a>
+                </li>
+            </ul>
+        {% endif %}
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarCollapse" label="Toggle navigation"
+            aria-controls="navbarCollapce" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+
+
+
+
+
+
+
+
     {% block content %}
     {% endblock %}
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

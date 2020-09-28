@@ -27,3 +27,9 @@ class ArticleDeleteView(DeleteView):
     context_object_name = 'article'
     template_name = 'article_delete.html'
     success_url = reverse_lazy('article_list_path')
+
+
+class ArticleCreateView(CreateView):
+    model = Article
+    template_name = 'article_new.html'
+    fields = ['title', 'body', 'author']
